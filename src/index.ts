@@ -1,16 +1,29 @@
-
-/* First Console Log Example =>
-console.log('Hello, world From TypeScript!!');
+/*
+Example of Object type
 */
 
-/* Example of Any type in TypeScript => */
+let Person = {
+    name: "John",
+    age: 30,
+};
 
-let firstName: any = 'Mark';
+let car: {
+    color: string;
+    brand: string;
+} =  {
+    color: "red",
+    brand: "BMW",
+};
 
-/* Then provide a number */
-firstName = 10;
-/*TS not Complaining anything due to Any type */
+let article : {
+    author: string;
+    content: string;
+    title: string;
+    image?: string; // Optional property
+};
 
-/* Then provide an array of numbers */
-firstName = [1, 2, 3];
-/*TS not Complaining anything due to Any type */
+article = {
+    author: "Stella",
+    content: "Hello World",
+    title: "My First Article",
+};
