@@ -1,28 +1,29 @@
+class PersonNew {
+  protected name: string;
+  public age: number;
 
-/*
-Example 1 - basic declaration of a function
-*/
-function intro (name: string, age: number): string {
-  return `Hello, my name is ${name} and I am ${age} years old.`
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  public getName(): string {
+    return this.name;
+  }
 }
-console.log(intro('John', 30)); // Hello, my name is John and I am 30 years old.
 
-/*
-Example 2 - function declaration with function expression 
+class NewAdmin extends PersonNew {
+  public returnName(): string {
+    return this.name;
+  }
+}
+
+
+const p1:PersonNew = new PersonNew("John", 30);
+console.log(p1.getName());
+const admin: NewAdmin = new NewAdmin("Mark", 42);
+console.log(admin);
+/*this is not allowed as name is protected and can only be accessed within the class and its subclasses
+console.log(admin.name);
 */
-
-const intro2 = function intro(name: string, age: number): string {
-    return `Hello, my name is ${name} and I am ${age} years old.`;
-};
-console.log(intro2('John', 31)); // Hello, my name is John and I am 31 years old.
-
-/*
-Example 3 - function declaration with arrow function
-*/
-
-const intro3 = (name: string, age: number): string => {
-    return `Hello, my name is ${name} and I am ${age} years old.`;
-};
-
-console.log(intro3('John', 32)); // Hello, my name is John and I am 32 years old.
+console.log(admin.returnName());
 
